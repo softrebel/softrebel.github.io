@@ -4,20 +4,21 @@ import LanguageHandler from "./lang";
 export const SITE: Site = {
   website: "https://softrebel.github.io", // replace this with your deployed domain
   author: "Jedi with Dimensions",
-  profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "Only Codes",
-  ogImage: "astropaper-og.jpg",
+  profile: "https://onlycodes.ir/",
+  desc: "Prepare to fight the dark side of the code",
+  title: "OnlyCodes Blog",
+  ogImage: "jedi-og.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
-  editPost: {
-    url: "https://github.com/softrebel/softrebel.github.io/edit/main/src/content/blog",
-    text: "پیشنهاد ویرایش",
-    appendFilePath: true,
-  },
+  // editPost: {
+  //   url: "https://github.com/softrebel/softrebel.github.io/edit/main/src/content/blog",
+  //   text: "پیشنهاد ویرایش",
+  //   appendFilePath: true,
+
+  // },
 };
 
 export const LOCALE = {
