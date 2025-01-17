@@ -95,6 +95,7 @@
 
   /* ===== Code Blocks & Syntax Highlighting ===== */
   pre:has(code) {
+    direction: ltr;
     @apply border border-skin-line;
   }
   code,

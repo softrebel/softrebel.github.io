@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Card from "@components/Card";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
-import { SITE } from "@config";
+import { SITE,translate } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import getPostsByGroupCondition from "@utils/getPostsByGroupCondition";
@@ -31,9 +31,9 @@ const MonthMap: Record<string, string> = {
 };
 ---
 
-<Layout title={`Archives | ${SITE.title}`}>
+<Layout title={`${translate("ArchivesPageTitle")??"Archives"} | ${SITE.title}`}>
   <Header activeNav="archives" />
-  <Main pageTitle="Archives" pageDesc="All the articles I've archived.">
+  <Main pageTitle={translate("ArchivesPageTitle")??"Archives"} pageDesc={translate("ArchivesPageDescription")??"All the articles I've archived."}>
     {
       Object.entries(
         getPostsByGroupCondition(posts, post =>

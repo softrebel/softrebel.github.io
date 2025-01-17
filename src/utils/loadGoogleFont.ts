@@ -12,7 +12,7 @@ async function loadGoogleFont(
   text: string
 ): Promise<ArrayBuffer> {
   const API = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(text)}`;
-
+  console.log(API);
   const css = await (
     await fetch(API, {
       headers: {
@@ -44,6 +44,12 @@ async function loadGoogleFonts(
   Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>
 > {
   const fontsConfig = [
+    {
+      name: "Vazirmatn",
+      font: "Vazirmatn",
+      weight: 400,
+      style: "normal",
+    },
     {
       name: "IBM Plex Mono",
       font: "IBM+Plex+Mono",

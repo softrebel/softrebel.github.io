@@ -1,5 +1,5 @@
 ---
-import { LOGO_IMAGE, SITE } from "@config";
+import { LOGO_IMAGE, SITE,translate } from "@config";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
@@ -57,17 +57,17 @@ const { activeNav } = Astro.props;
         <ul id="menu-items" class="display-none sm:flex">
           <li>
             <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
-              Posts
+              {translate("Posts")??"Posts"}
             </a>
           </li>
           <li>
             <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>
-              Tags
+              {translate("Tags")??"Tags"}
             </a>
           </li>
           <li>
             <a href="/about/" class={activeNav === "about" ? "active" : ""}>
-              About
+              {translate("About")??"About"}
             </a>
           </li>
           {
@@ -77,7 +77,7 @@ const { activeNav } = Astro.props;
                   href="/archives/"
                   className={`focus-outline flex justify-center p-3 sm:p-1`}
                   ariaLabel="archives"
-                  title="Archives"
+                  title={translate("Archives")??"Archives"}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ const { activeNav } = Astro.props;
                 activeNav === "search" ? "active" : ""
               } flex`}
               ariaLabel="search"
-              title="Search"
+              title={translate("Search")??"Search"}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@ const { activeNav } = Astro.props;
                 <button
                   id="theme-btn"
                   class="focus-outline"
-                  title="Toggles light & dark"
+                  title={translate("Toggle")??"Toggles light & dark"}
                   aria-label="auto"
                   aria-live="polite"
                 >

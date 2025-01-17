@@ -5,7 +5,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Pagination from "@components/Pagination.astro";
 import Card from "@components/Card";
-import { SITE } from "@config";
+import { SITE,translate } from "@config";
 import type { Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 
@@ -16,9 +16,9 @@ export interface Props {
 const { page } = Astro.props;
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
+<Layout title={`${translate("PostsPageTitle")??"Posts"}  | ${SITE.title}`}>
   <Header activeNav="posts" />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+  <Main pageTitle={translate("PostsPageTitle")??"Posts"} pageDesc={translate("PostsPageDescription")??"All the articles I've posted."}>
     <ul>
       {
         page.data.map(({ data, slug }) => (

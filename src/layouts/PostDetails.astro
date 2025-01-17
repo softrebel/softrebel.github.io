@@ -7,7 +7,7 @@ import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
-import { SITE } from "@config";
+import { SITE,translate,LOCALE } from "@config";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -73,7 +73,7 @@ const nextPost =
         ><path
           d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
         ></path>
-      </svg><span>Go back</span>
+      </svg><span>{translate("Back")??"Go back"}</span>
     </button>
   </div>
   <main id="main-content">
@@ -106,7 +106,7 @@ const nextPost =
             d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
           ></path>
         </svg>
-        <span>Back to Top</span>
+        <span>{translate("BackToTop")??"Back to Top"}</span>
       </button>
 
       <ShareLinks />
@@ -134,13 +134,19 @@ const nextPost =
               stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left flex-none"
             >
-              <>
+
+              {LOCALE.dir=="ltr" ? <>
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M15 6l-6 6l6 6" />
-              </>
+              </> : <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+              </>}
+
+
             </svg>
             <div>
-              <span>Previous Post</span>
+              <span>{translate("PreviousPost")??"Previous Post"}</span>
               <div class="text-sm text-skin-accent/85">{prevPost.title}</div>
             </div>
           </a>
@@ -153,7 +159,7 @@ const nextPost =
             class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2"
           >
             <div>
-              <span>Next Post</span>
+              <span>{translate("NextPost")??"Next Post"}</span>
               <div class="text-sm text-skin-accent/85">{nextPost.title}</div>
             </div>
             <svg
@@ -168,10 +174,13 @@ const nextPost =
               stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right flex-none"
             >
-              <>
+              {LOCALE.dir=="ltr" ? <>
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M9 6l6 6l-6 6" />
-              </>
+              </> : <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M15 6l-6 6l6 6" />
+              </>}
             </svg>
           </a>
         )

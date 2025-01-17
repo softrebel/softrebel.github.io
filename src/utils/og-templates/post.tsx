@@ -62,7 +62,7 @@ export default async (post: CollectionEntry<"blog">) => {
               overflow: "hidden",
             }}
           >
-            {post.data.title}
+            {post.data.ogTitle || post.data.title}
           </p>
           <div
             style={{

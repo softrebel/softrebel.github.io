@@ -25,3 +25,48 @@ export type SocialObjects = {
   active: boolean;
   linkTitle: string;
 }[];
+
+export type Language = {
+  Home:string;
+  SocialLinks: string;
+  Updated: string;
+  Featured: string;
+  RecentPosts: string;
+  AllPosts: string;
+  AllRightsReserved: string;
+  Copyright:string;
+  Posts: string;
+  Post: string;
+  Tags: string;
+  Tag:string;
+  About: string;
+  Archives: string;
+  Search: string;
+  Toggle: string;
+  Back:string;
+  NotFoundTitle:string;
+  NotFoundMessage:string;
+  BackHome:string;
+
+  ArchivesPageTitle: string;
+  ArchivesPageDescription: string;
+
+  PostsPageTitle: string;
+  PostsPageDescription: string;
+
+  TagsPageTitle: string;
+  TagsPageDescription: string;
+  TagPageDescription:string;
+
+  SearchPageTitle: string;
+  SearchPageDescription: string;
+  SearchAnything:string;
+
+
+  BackToTop: string;
+  SharePost:string;
+
+  PreviousPost:string;
+  NextPost:string;
+
+};
